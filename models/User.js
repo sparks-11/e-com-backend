@@ -27,10 +27,10 @@ const UserSchema =mongoose.Schema({
     type:String,
   },
   dob: {
-    type:string,
+    type:String,
   },
   mobile: {
-    type:Number
+    type:Number,
   }
 },{timestamps: true })
 
