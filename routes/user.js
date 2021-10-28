@@ -22,7 +22,7 @@ router.put("/update/:id", verfiyTokenAndAuthorization ,async (req, res) => {
 // DELETE USER
 router.delete("/delate/:id", verfiyTokenAndAuthorization, async (req, res) => {
   try {
-    await User.findOneAndDelete(req.params.id)
+    await User.findByIdAndDelete(req.params.id)
     res.status(200).json("user sucessfuly DELETED")
   } catch (err) {
     res.status(500).json(err)
