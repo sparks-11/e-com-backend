@@ -18,6 +18,19 @@ const UserSchema =mongoose.Schema({
   isAdmin: {
     type: Boolean,
     default: false
+  },
+  img: {
+    type: String,
+    unique:true
+  },
+  address:{
+    type:String,
+  },
+  dob: {
+    type:string,
+  },
+  mobile: {
+    type:Number
   }
 },{timestamps: true })
 
