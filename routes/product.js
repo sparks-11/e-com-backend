@@ -29,7 +29,7 @@ router.post("/create",verfiyTokenAndAdmin,async (req, res) => {
       size: req.body.size,
       color: req.body.color,
       price:req.body.price,
-      img:"https://github.com/sparks-11/category-imgs/blob/main/category-4.jpg?raw=true",
+      img: req.body.img,
     });
     const savedProduct = await newProduct.save();
     res.status(200).json({status:"success", savedProduct})
