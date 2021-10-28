@@ -24,6 +24,10 @@ const ProductSchema =mongoose.Schema({
     type: Number,
     require:true
   },
+  stock: {
+    type: Boolean,
+    default: true
+  },
   img: {
     type: String,
     unique:true
