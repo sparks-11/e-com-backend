@@ -31,7 +31,7 @@ router.put("/update/:id", verfiyTokenAndAdmin ,async (req, res) => {
 // DELETE ORDER
 router.delete("/delete/:id", verfiyTokenAndAdmin, async (req, res) => {
   try {
-    await Order.findOneAndDelete(req.params.id)
+    await Order.findByIdAndDelete(req.params.id)
     res.status(200).json("Order sucessfuly DELETED")
   } catch (err) {
     res.status(500).json(err)
