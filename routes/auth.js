@@ -9,12 +9,17 @@ const jwt = require("jsonwebtoken")
 router.post("/register", async (req,res) => {
   try {
     const newPassword = await cryptoJS.AES.encrypt(req.body.password, process.env.CR_SEC).toString()
-    await User.create({
+    const savedUser = await User.create({
       name: req.body.name,
       email: req.body.email,
+      isAdmin: req.body.isAdmin,
+      mobile: req.body.mobile,
+      img: req.body.img,
+      dob: req.body.dob,
+      address:req.body.address,
       password:newPassword
     })
-    res.status(201).json({result:"user created succesful"})
+    res.status(201).json(savedUser)
   } catch (err) {
     res.status(501).json({error: "this email already exsits"})
   }
